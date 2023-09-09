@@ -1,0 +1,27 @@
+<link rel="stylesheet" href="/css/home.css">
+    
+
+<div class="home-container">
+    <div class="posts-container">
+        <ul>
+            <% for(post of posts){ %>
+    
+                <%- include('_post') -%>
+            
+            <% } %>
+        </ul>
+    </div>
+    
+    
+    <section id="user-frendes">
+        <h4>Friends</h4>
+    
+        <% for(u of all_users){ %>
+            <p>
+                <a href="/users/profile/<%= u.id %>"><%= u.name %></a>
+            </p>
+    
+        <% } %>
+    </section>
+</div>
+

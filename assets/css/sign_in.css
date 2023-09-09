@@ -1,0 +1,56 @@
+:root{
+   --primarycolor:#0F0E0E;
+   --seconderycolor:#2C3333;
+}
+
+
+
+.signIN{
+   width: 250px;
+   height: 200px;
+   background-color: var(--primarycolor);
+   border: 1px solid var(--primarycolor);
+   border-radius: 5px;
+}
+
+.signIN{
+   display:flex;
+   flex-direction:column;
+   justify-content: center;
+   align-items: center;
+   gap: 20px;
+}
+
+.signIN span{
+   font-size: 20px;
+}
+
+.signIN form{
+   display: flex;
+   flex-direction: column;
+   gap: 10px;
+}
+
+input{
+   display: block;
+   /* border: none; */
+   background-color: var(--seconderycolor);
+   border: 0px solid var(--primarycolor);
+   line-height: 20px;
+   color: #fff;
+}
+input:focus{
+   border: none;
+   border-bottom: 3px solid #FFD966;
+}
+
+button{
+   position: relative;
+   left: 20%;
+   width: 100px;
+   height: 25px;
+   background-color:#060606 ;
+   color: #fff;
+   border: 1px solid black;
+   border-radius: 3px;
+}

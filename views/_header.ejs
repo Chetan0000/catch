@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/header.css">
+    <script src="https://kit.fontawesome.com/d914beddb0.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <Header>
+        <div class="container">
+            <span>Catch</span>
+    
+
+        <ul>
+            <% if(locals.user){ %>
+                <li>
+                    <a href="/users/profile/<%= locals.user.id %>">
+                        <i class="fa-solid fa-user"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="/users/sign-out">Sign out <i class="fa-solid fa-right-from-bracket"></i></a>
+                </li>
+            <% }else{ %>
+                <li>
+                    <a href="/users/sign-in">Sign in</a>
+                </li>
+                <li>
+                    <a href="/users/sign-up">Sign up</a>
+                </li>
+                <% } %>
+        </ul>
+        </div>
+        
+
+    
+
+    </Header>
+
+<div class="space">
+    
+</div>
+</body>
+</html>

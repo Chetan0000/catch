@@ -1,0 +1,47 @@
+:root{
+    --primarycolor:#0f0e0e;
+    --seconderycolor:#2C3333;
+    --primaryFontColor:#ffff;
+}
+
+body{
+    color: var(--primaryFontColor);
+}
+
+header{
+    position: fixed;
+    top: -0px;
+    width: 100%;
+    padding: 5px;
+    height: 50px;;
+    background-color: var(--primarycolor);
+}
+
+header{
+    display: flex;
+    justify-content: center;
+
+}
+
+header ul{
+    list-style: none;
+    
+    columns: 2;
+}
+
+header span{
+    margin-top: 1%;
+}
+.container{
+    width: 1500px;
+    display: flex;
+    justify-content: space-between;
+}
+
+a{
+    text-decoration: none;
+    color: var(--primaryFontColor);
+}
+
+
+

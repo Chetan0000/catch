@@ -1,0 +1,20 @@
+
+.home-container{
+    margin-top: 50px;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.home-container .posts-container{
+    width:70vw ;
+    min-height: 80vh;
+    padding: 10px;
+    border-right: 1px solid black;
+}
+
+.home-container #user-friends{
+    width: 30vw;
+    height: 80vh;
+    padding: 10px;
+} 
