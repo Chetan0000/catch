@@ -12,7 +12,7 @@ module.exports.create = async (req, res) => {
         }).then(comment => {
             post.comments.push(comment);
             post.save();
-
+            req.flash('success', 'Comment created');
             res.redirect('/');
         }).catch(err => {
             //  handle error 
@@ -29,7 +29,8 @@ module.exports.destroy = async (req, res) => {
             let postId = comment.post;
             comment.deleteOne();
 
-            Post.findByIdAndUpdate(postId,{ $pull: {comments: req.params.id}})
+            Post.findByIdAndUpdate(postId,{ $pull: {comments: req.params.id}});
+            req.flash('success', 'Comment Deleted');
             return res.redirect('back');
 
         }else{
