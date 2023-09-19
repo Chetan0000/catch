@@ -17,16 +17,52 @@ module.exports.profile = async function(req,res){
 
 // update profile 
 
+exports.createNodeWithImg = async (req,res) => {
+    try{
+        res.status(201).json({message:"Success",data:{}});
+    }catch (error){
+        res.status(400).json({
+            status:"Failed",
+            message:"Error in creating a new note"+error,
+        })
+    }
+}
+
 module.exports.update = async (req, res) => {
+    // if(req.user.id == req.params.id){
+    //     await User.findByIdAndUpdate(req.params.id, req.body)
+    //     .then(user => {
+    //         return res.redirect('back');
+    //     })
+    //     .catch(err => {
+    //         console.log(`error in updating user name and email ${err}`);
+    //         res.status(401).send('unauthorized');
+    //     })
+    // }
+
     if(req.user.id == req.params.id){
-        await User.findByIdAndUpdate(req.params.id, req.body)
-        .then(user => {
+        try{
+            let user = await User.findById(req.params.id);
+            User.uploadedAvatar(req, res, (err) => {
+                if(err){
+                    console.log("multer Error",err);
+                }
+                user.name = req.body.name;
+                user.email = req.body.emaill
+
+                
+            });
             return res.redirect('back');
-        })
-        .catch(err => {
-            console.log(`error in updating user name and email ${err}`);
-            res.status(401).send('unauthorized');
-        })
+
+        }catch(error){
+            req.flash('error','user exist');
+            console.log(error);
+            return res.redirect('back');
+        }
+
+    }else{
+        req.flash('error','Unauthorized');
+        return res.status(401).send('Unauthorized');
     }
 }
 
